@@ -8,7 +8,7 @@ export default function Authenticated({ children }: PropsWithChildren) {
     <div className="mt-16 min-h-screen bg-secondary">
       <NavBar />
 
-      <main className="flex flex-col gap-6 p-4 sm:flex-row sm:p-6">
+      <main className="mx-auto flex flex-col gap-4 p-4 sm:max-w-7xl sm:flex-row sm:gap-6 sm:p-6">
         <Sidebar />
 
         {children}
