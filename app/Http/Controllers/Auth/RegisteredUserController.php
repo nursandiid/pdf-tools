@@ -37,10 +37,6 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        if (!Storage::exists('user/avatar.png')) {
-            Storage::putFileAs('user', public_path('img/avatar.png'), 'avatar.png');
-        }
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
