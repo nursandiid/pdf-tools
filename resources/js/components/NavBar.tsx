@@ -1,5 +1,6 @@
 import { PageProps } from "@/types";
 import { Link, usePage } from "@inertiajs/react";
+import { useThemeStore } from "@/store/use-theme-store";
 
 import {
   BsBoxArrowRight,
@@ -9,15 +10,15 @@ import {
   BsSun,
 } from "react-icons/bs";
 
-type Theme = "light" | "dark" | "system";
-
 import ApplicationLogo from "@/components/ApplicationLogo";
 import Dropdown from "@/components/Dropdown";
-import { useState } from "react";
 
 export default function NavBar() {
   const { user } = usePage<PageProps>().props.auth;
-  const [theme, setTheme] = useState<Theme>("system");
+  const [theme, setTheme] = useThemeStore((state) => [
+    state.theme,
+    state.setTheme,
+  ]);
 
   const ThemeIcon = () => {
     switch (theme) {
