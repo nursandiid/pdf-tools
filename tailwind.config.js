@@ -1,5 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
-import colors from "tailwindcss/colors";
+import colors, { yellow } from "tailwindcss/colors";
 import forms from "@tailwindcss/forms";
 
 /** @type {import('tailwindcss').Config} */
@@ -24,16 +24,36 @@ export default {
           foreground: "hsl(var(--secondary-foreground))",
         },
         blue: {
-          DEFAULT: colors.blue[600],
-          dark: colors.blue[700],
+          DEFAULT: colors.blue[500],
+          dark: colors.blue[600],
         },
         green: {
-          DEFAULT: colors.emerald[600],
-          dark: colors.emerald[700],
+          DEFAULT: colors.emerald[500],
+          dark: colors.emerald[600],
         },
         red: {
           DEFAULT: colors.red[600],
           dark: colors.red[700],
+        },
+        yellow: {
+          DEFAULT: colors.amber[500],
+          dark: colors.amber[600],
+        },
+        pink: {
+          DEFAULT: colors.rose[500],
+          dark: colors.rose[600],
+        },
+        indigo: {
+          DEFAULT: colors.indigo[500],
+          dark: colors.indigo[600],
+        },
+        sky: {
+          DEFAULT: colors.sky[500],
+          dark: colors.sky[600],
+        },
+        orange: {
+          DEFAULT: colors.orange[500],
+          dark: colors.orange[600],
         },
       },
     },

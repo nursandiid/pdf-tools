@@ -10,9 +10,15 @@
     "require": {
         "php": "^8.2",
         "inertiajs/inertia-laravel": "^1.0",
+        "intervention/image": "^3.8",
         "laravel/framework": "^11.9",
+        "laravel/reverb": "@beta",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "setasign/fpdf": "^1.8",
+        "setasign/fpdi": "^2.6",
+        "spatie/pdf-to-image": "^3.0",
+        "tecnickcom/tcpdf": "^6.7",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {

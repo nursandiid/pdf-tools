@@ -41,12 +41,32 @@
     @apply transition-all bg-green text-white hover:bg-green-dark focus:bg-green-dark focus:ring-4 focus:ring-green/15;
   }
 
+  .btn-yellow {
+    @apply transition-all bg-yellow text-white hover:bg-yellow-dark focus:bg-yellow-dark focus:ring-4 focus:ring-yellow/15;
+  }
+
+  .btn-pink {
+    @apply transition-all bg-pink text-white hover:bg-pink-dark focus:bg-pink-dark focus:ring-4 focus:ring-pink/15;
+  }
+
+  .btn-indigo {
+    @apply transition-all bg-indigo text-white hover:bg-indigo-dark focus:bg-indigo-dark focus:ring-4 focus:ring-indigo/15;
+  }
+
+  .btn-sky {
+    @apply transition-all bg-sky text-white hover:bg-sky-dark focus:bg-sky-dark focus:ring-4 focus:ring-sky/15;
+  }
+
+  .btn-orange {
+    @apply transition-all bg-orange text-white hover:bg-orange-dark focus:bg-orange-dark focus:ring-4 focus:ring-orange/15;
+  }
+
   .btn-secondary {
     @apply transition-all bg-background text-foreground hover:bg-secondary focus:bg-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background border border-gray-200 dark:border-gray-500/25;
   }
 
   .btn-outline-red {
-    @apply text-base transition-all bg-background text-red ring-2 ring-red hover:bg-red focus:bg-red hover:text-white focus:text-white;
+    @apply text-base transition-all bg-background text-red border-2 border-red hover:bg-red focus:bg-red focus:ring-4 focus:ring-red/15 hover:text-white focus:text-white;
   }
 
   .btn-link {

@@ -17,7 +17,7 @@ if (!function_exists('upload_file')) {
 
         Storage::putFileAs($directory, $file, $fileName);
 
-        return "/storage/$directory/$fileName";
+        return "/$directory/$fileName";
     }
 }
 
@@ -29,12 +29,25 @@ if (!function_exists('remove_file')) {
      */
     function remove_file($filePath)
     {
-        $filePath = str_replace('/storage', '', $filePath);
-        
         if ($filePath && Storage::exists($filePath)) {
             return Storage::delete($filePath);
         }
 
         return false;
+    }
+}
+
+if (!function_exists('calculate_percentage')) {
+    /**
+     *
+     * @param int $total
+     * @param int $processing
+     * 
+     * @return int
+     */
+    function calculate_percentage($total, $processing) {
+        if ($total === 0) return 0;
+
+        return round($processing / $total * 100, 2);
     }
 }

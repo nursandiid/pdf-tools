@@ -1,13 +1,15 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MergePdfController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/merge_pdf', fn () => 'page of merge_pdf')->name('merge_pdf');
+Route::get('/merge-pdf', [MergePdfController::class, 'index'])->name('merge_pdf');
+Route::post('/merge-pdf', [MergePdfController::class, 'store'])->name('merge_pdf.store');
 Route::get('/split_pdf', fn () => 'page of split_pdf')->name('split_pdf');
 Route::get('/pdf_to_jpg', fn () => 'page of pdf_to_jpg')->name('pdf_to_jpg');
 Route::get('/jgp_to_pdf', fn () => 'page of jgp_to_pdf')->name('jgp_to_pdf');

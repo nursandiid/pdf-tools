@@ -6,7 +6,7 @@ import Services from "@/components/welcome/Services";
 export default function Welcome() {
   return (
     <AppLayout title="Online PDF tools" footer={true}>
-      <Wrapper>
+      <Wrapper className="max-w-screen-xl sm:py-8">
         <Hero />
         <Services />
       </Wrapper>

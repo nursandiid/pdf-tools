@@ -11,7 +11,7 @@ export default function Wrapper({
   return (
     <section
       className={clsx(
-        "relative mx-auto mt-16 min-h-[calc(100vh_-_128px)] w-full flex-col gap-8 p-4 text-foreground sm:gap-12",
+        "relative mx-auto mt-16 flex min-h-[calc(100vh_-_128px)] w-full flex-col gap-8 p-4 text-foreground sm:gap-12",
         className,
       )}
       {...rest}
