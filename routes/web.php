@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompressPdfController;
 use App\Http\Controllers\DownloadFileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JpgToPdfController;
@@ -23,7 +24,8 @@ Route::get('/jpg-to-pdf', [JpgToPdfController::class, 'index'])->name('jpg_to_pd
 Route::post('/jpg-to-pdf', [JpgToPdfController::class, 'store'])->name('jpg_to_pdf.store');
 Route::get('/rotate-pdf', [RotatePdfController::class, 'index'])->name('rotate_pdf');
 Route::post('/rotate-pdf', [RotatePdfController::class, 'store'])->name('rotate_pdf.store');
-Route::get('/compress-pdf', fn () => 'page of compress_pdf')->name('compress_pdf');
+Route::get('/compress-pdf', [CompressPdfController::class, 'index'])->name('compress_pdf');
+Route::post('/compress-pdf', [CompressPdfController::class, 'store'])->name('compress_pdf.store');
 Route::get('/word-to-pdf', fn () => 'page of word_to_pdf')->name('word_to_pdf');
 Route::get('/powerpoint-to-pdf', fn () => 'page of powerpoint_to_pdf')->name('powerpoint_to_pdf');
 

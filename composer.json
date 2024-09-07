@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ilovepdf/ilovepdf-php": "^1.2",
         "inertiajs/inertia-laravel": "^1.0",
         "intervention/image": "^3.8",
         "laravel/framework": "^11.9",

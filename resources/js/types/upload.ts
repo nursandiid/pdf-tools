@@ -17,3 +17,5 @@ export type Orientation = "P" | "L";
 export type Margin = 0 | 14 | 28;
 
 export type Rotation = 0 | 90 | 180 | -90;
+
+export type CompressionLevel = "recommended" | "extreme" | "low";
