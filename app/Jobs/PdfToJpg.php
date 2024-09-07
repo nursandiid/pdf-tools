@@ -81,8 +81,6 @@ class PdfToJpg implements ShouldQueue
         } catch (\Exception $e) {
             array_map(fn ($file) => remove_file($file), $this->files);
 
-            logger('ERROR', [$e->getMessage()]);
-
             $this->failedProgress($e->getMessage());
         }
     }

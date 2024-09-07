@@ -10,19 +10,23 @@ type PdfThumbnailGridProps = {
   files: Preview[];
   deleteFile: (file: Preview) => void;
   className?: string;
+  rotateStyle?: {
+    [key: string]: string;
+  };
 };
 
 export default function PdfThumbnailGrid({
   files,
   deleteFile,
   className,
+  rotateStyle,
 }: PdfThumbnailGridProps) {
   return (
     files.length > 0 && (
       <div className="relative grid w-full grid-cols-2 gap-4 text-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
         {files.map((file) => (
           <ThumbnailWrapper key={file.preview}>
-            <div className="my-auto flex">
+            <div className="my-auto flex" style={rotateStyle}>
               <PdfThumbnail file={file} pageIndex={() => 0} />
             </div>
 
