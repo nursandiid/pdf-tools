@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum('service', [
                 RouteServiceProvider::MERGE_PDF,
                 RouteServiceProvider::SPLIT_PDF,
-                RouteServiceProvider::PDF_TO_PDF,
+                RouteServiceProvider::PDF_TO_JPG,
                 RouteServiceProvider::JPG_TO_PDF,
                 RouteServiceProvider::ROTATE_PDF,
                 RouteServiceProvider::COMPRESS_PDF,

@@ -9,3 +9,5 @@ export type Upload = {
   files: null | File[];
   token: string;
 };
+
+export type ImageQuality = "normal" | "high";

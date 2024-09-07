@@ -8,7 +8,7 @@ class RouteServiceProvider extends ServiceProvider
 {
     public const MERGE_PDF = 'merge_pdf';
     public const SPLIT_PDF = 'split_pdf';
-    public const PDF_TO_PDF = 'pdf_to_pdf';
+    public const PDF_TO_JPG = 'pdf_to_jpg';
     public const JPG_TO_PDF = 'jpg_to_pdf';
     public const ROTATE_PDF = 'rotate_pdf';
     public const COMPRESS_PDF = 'compress_pdf';
