@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CompressPdfController;
 use App\Http\Controllers\DownloadFileController;
 use App\Http\Controllers\HomeController;
@@ -43,6 +44,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/activity', [ActivityController::class, 'index'])->name('activity');
+    Route::delete('/activity/{id}', [ActivityController::class, 'destroy'])->name('activity.destroy');
 });
 
 require __DIR__.'/auth.php';

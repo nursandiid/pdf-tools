@@ -24,4 +24,9 @@ class UploadLogs extends Model
             set: fn (string|null $value) => str_replace('/storage', '', $value)
         );
     }
+
+    public static function user()
+    {
+        return self::query()->where('user_id', auth()->id());
+    }
 }

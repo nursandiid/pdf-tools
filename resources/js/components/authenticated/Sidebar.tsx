@@ -1,7 +1,11 @@
 import clsx from "clsx";
 import { usePage } from "@inertiajs/react";
 import { PageProps } from "@/types";
-import { BsBoxArrowRight, BsPersonCircle } from "react-icons/bs";
+import {
+  BsBoxArrowRight,
+  BsClockHistory,
+  BsPersonCircle,
+} from "react-icons/bs";
 import Dropdown from "@/components/Dropdown";
 
 export default function Sidebar() {
@@ -40,6 +44,20 @@ export default function Sidebar() {
             <div className="flex items-center gap-2">
               <BsBoxArrowRight />
               Log out
+            </div>
+          </Dropdown.Link>
+        </div>
+
+        <div>
+          <h5 className="font-medium text-foreground">Activity</h5>
+          <hr className="my-2 border-secondary dark:border-gray-500/25" />
+          <Dropdown.Link
+            href={route("activity")}
+            className={clsx(route().current("activity") && "bg-secondary")}
+          >
+            <div className="flex items-center gap-2">
+              <BsClockHistory />
+              Last Tasks
             </div>
           </Dropdown.Link>
         </div>
