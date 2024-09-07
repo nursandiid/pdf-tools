@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JpgToPdfController;
 use App\Http\Controllers\MergePdfController;
 use App\Http\Controllers\PdfToJpgController;
+use App\Http\Controllers\PowerpointToPdfController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RotatePdfController;
 use App\Http\Controllers\SplitPdfController;
@@ -29,7 +30,8 @@ Route::get('/compress-pdf', [CompressPdfController::class, 'index'])->name('comp
 Route::post('/compress-pdf', [CompressPdfController::class, 'store'])->name('compress_pdf.store');
 Route::get('/word-to-pdf', [WordToPdfController::class, 'index'])->name('word_to_pdf');
 Route::post('/word-to-pdf', [WordToPdfController::class, 'store'])->name('word_to_pdf.store');
-Route::get('/powerpoint-to-pdf', fn () => 'page of powerpoint_to_pdf')->name('powerpoint_to_pdf');
+Route::get('/powerpoint-to-pdf', [PowerpointToPdfController::class, 'index'])->name('powerpoint_to_pdf');
+Route::post('/powerpoint-to-pdf', [PowerpointToPdfController::class, 'store'])->name('powerpoint_to_pdf.store');
 
 Route::get('/download/{token}', [DownloadFileController::class, 'index'])->name('download_file');
 

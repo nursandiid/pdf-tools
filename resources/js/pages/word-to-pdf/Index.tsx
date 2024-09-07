@@ -63,7 +63,7 @@ export default function WordToPdf() {
           <Hero
             title="Word to PDF"
             description="Make DOC and DOCX files easy to read by converting them to PDF."
-            btn={{ title: "Select PDF files", className: "btn btn-blue" }}
+            btn={{ title: "Select Word files", className: "btn btn-blue" }}
             dropLabel="or drop words here"
           />
         )}
