@@ -20,7 +20,7 @@ export default function Services() {
     {
       title: "JPG to PDF",
       imageUrl: "/img/jpg-to-pdf.svg",
-      href: route("jgp_to_pdf"),
+      href: route("jpg_to_pdf"),
     },
     {
       title: "Rotate PDF",

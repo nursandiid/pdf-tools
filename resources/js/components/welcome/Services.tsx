@@ -35,7 +35,7 @@ export default function Services() {
       description:
         "Convert JPG images to PDF in seconds. Easily adjust orientation and margins.",
       imageUrl: "/img/jpg-to-pdf.svg",
-      href: route("jgp_to_pdf"),
+      href: route("jpg_to_pdf"),
     },
     {
       title: "Rotate PDF",

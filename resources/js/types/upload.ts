@@ -11,3 +11,7 @@ export type Upload = {
 };
 
 export type ImageQuality = "normal" | "high";
+
+export type Orientation = "P" | "L";
+
+export type Margin = 0 | 14 | 28;
