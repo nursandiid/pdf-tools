@@ -7,7 +7,7 @@ use App\Services\UploadService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class MergePdfController extends Controller
+class SplitPdfController extends Controller
 {
     public function __construct(private UploadService $uploadService)
     {
@@ -20,7 +20,7 @@ class MergePdfController extends Controller
     public function index()
     {
         try {
-            return Inertia::render('merge-pdf/Index');
+            return Inertia::render('split-pdf/Index');
         } catch (\Exception $e) {
             return back()->with([
                 'error_msg' => $e->getMessage()
@@ -38,17 +38,18 @@ class MergePdfController extends Controller
             $files = $this->uploadService->handle(
                 token: $token,
                 files: $request->file('files'),
-                directory: 'download/merged',
-                service: RouteServiceProvider::MERGE_PDF
+                directory: 'download/split',
+                service: RouteServiceProvider::SPLIT_PDF
             );
             
-            dispatch(new \App\Jobs\MergePdf(
+            dispatch(new \App\Jobs\SplitPdf(
                 user: auth()->user(),
                 token: $token,
-                files: $files
+                files: $files,
+                attributes: $request->only('pages')
             ));
 
-            return to_route(RouteServiceProvider::MERGE_PDF, compact('token'));
+            return to_route(RouteServiceProvider::SPLIT_PDF, compact('token'));
         } catch (\Exception $e) {
             return back()->with([
                 'error_msg' => $e->getMessage()

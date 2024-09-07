@@ -51,8 +51,6 @@ class MergePdf implements ShouldQueue
                     $pdf->useTemplate($tpl);
                 }
 
-                if (config('app.env') === 'local') sleep(1);
-
                 remove_file($file);
                 $this->updateProgress(count($this->files), $key + 1);
             }
