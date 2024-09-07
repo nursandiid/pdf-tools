@@ -9,6 +9,7 @@ use App\Http\Controllers\PdfToJpgController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RotatePdfController;
 use App\Http\Controllers\SplitPdfController;
+use App\Http\Controllers\WordToPdfController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -26,7 +27,8 @@ Route::get('/rotate-pdf', [RotatePdfController::class, 'index'])->name('rotate_p
 Route::post('/rotate-pdf', [RotatePdfController::class, 'store'])->name('rotate_pdf.store');
 Route::get('/compress-pdf', [CompressPdfController::class, 'index'])->name('compress_pdf');
 Route::post('/compress-pdf', [CompressPdfController::class, 'store'])->name('compress_pdf.store');
-Route::get('/word-to-pdf', fn () => 'page of word_to_pdf')->name('word_to_pdf');
+Route::get('/word-to-pdf', [WordToPdfController::class, 'index'])->name('word_to_pdf');
+Route::post('/word-to-pdf', [WordToPdfController::class, 'store'])->name('word_to_pdf.store');
 Route::get('/powerpoint-to-pdf', fn () => 'page of powerpoint_to_pdf')->name('powerpoint_to_pdf');
 
 Route::get('/download/{token}', [DownloadFileController::class, 'index'])->name('download_file');
