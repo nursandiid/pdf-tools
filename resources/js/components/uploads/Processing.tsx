@@ -34,9 +34,7 @@ export default function Processing({
 
     window.Echo.channel(`task-processed-successfully-${token}`).listen(
       ".task-processed-successfully",
-      () => {
-        setRecentlySuccessful(false);
-      },
+      () => router.get(route("download_file", token)),
     );
   }, []);
 

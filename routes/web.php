@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DownloadFileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MergePdfController;
 use App\Http\Controllers\ProfileController;
@@ -17,6 +18,8 @@ Route::get('/rotate_pdf', fn () => 'page of rotate_pdf')->name('rotate_pdf');
 Route::get('/compress_pdf', fn () => 'page of compress_pdf')->name('compress_pdf');
 Route::get('/word_to_pdf', fn () => 'page of word_to_pdf')->name('word_to_pdf');
 Route::get('/powerpoint_to_pdf', fn () => 'page of powerpoint_to_pdf')->name('powerpoint_to_pdf');
+
+Route::get('/download/{token}', [DownloadFileController::class, 'index'])->name('download_file');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
