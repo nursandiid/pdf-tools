@@ -11,8 +11,8 @@ type PdfThumbnailSingleProps = {
 export default function PdfThumbnailSingle({ file }: PdfThumbnailSingleProps) {
   return (
     file && (
-      <div className="relative grid w-full grid-cols-2 gap-4 text-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
-        <ThumbnailWrapper>
+      <div className="relative flex w-full justify-center gap-4 text-center">
+        <ThumbnailWrapper className="!w-auto min-w-48 max-w-56">
           <div className="my-auto flex">
             <PdfThumbnail file={file} pageIndex={() => 0} />
           </div>
