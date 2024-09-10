@@ -45,10 +45,11 @@ class PdfToJpg implements ShouldQueue
             $archivedFiles = [];
             $quality = $this->attributes['quality'] === 'high' ? 100 : 75;
 
-            foreach ($this->files as $key => $file) {
+            foreach ($this->files as $file) {
                 $pdf = new Pdf(Storage::path($file));
+                $pageCount = $pdf->pageCount();
 
-                for ($i = 1; $i <= $pdf->pageCount(); $i++) {
+                for ($i = 1; $i <= $pageCount; $i++) {
                     $downloadPath = $this->folderPath . \Str::uuid() . '.png';
                     $outputPath = Storage::path($downloadPath);
 
@@ -64,7 +65,9 @@ class PdfToJpg implements ShouldQueue
                     $image->save();
 
                     array_push($archivedFiles, $downloadPath);
-                    $this->updateProgress(count($this->files), $key + 1);
+
+                    // TODO: Please update this one to make it works well
+                    $this->updateProgress($pageCount, $i);
                 }
 
                 remove_file($file);
