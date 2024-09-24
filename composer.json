@@ -20,7 +20,8 @@
         "setasign/fpdi": "^2.6",
         "spatie/pdf-to-image": "^3.0",
         "tecnickcom/tcpdf": "^6.7",
-        "tightenco/ziggy": "^2.0"
+        "tightenco/ziggy": "^2.0",
+        "pusher/pusher-php-server": "^7.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

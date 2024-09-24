@@ -17,7 +17,7 @@ This PDF tools app offers an all-in-one solution for managing PDF files. Easily 
 - 🔍 View PDFs and other files in real-time
 - 🖼️ Generate quick visual thumbnails of PDFs
 - 📥 Seamlessly track file uploads
-- ⚡ Real-time PDF tasks with Laravel Reverb and Jobs
+- ⚡ Real-time PDF tasks with Pusher and Jobs
 - 🚨 Alerts for errors and statuses using toastr
 - ⬇️ Easy access to download processed files
 - 📊 Central hub to track all file activities and processes
@@ -75,32 +75,39 @@ In this case, you can set the value to `database`.
 QUEUE_CONNECTION=database
 ```
 
-### Laravel Reverb Connection
-Run this command to generate our credentials:
+### Pusher Connection
+Use your credentials to run your project.
+
 ```bash
-php artisan reverb:install
-```
+BROADCAST_CONNECTION=pusher
 
-It will automatically fill these variables:
-```bash
-BROADCAST_CONNECTION=reverb
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_HOST=
+PUSHER_PORT=443
+PUSHER_SCHEME=https
+PUSHER_APP_CLUSTER=
 
-REVERB_APP_ID=198038
-REVERB_APP_KEY=obxrp97kzubmkwopetvi
-REVERB_APP_SECRET=pp2ataxxaqncsg5p15ey
-REVERB_HOST="localhost"
-REVERB_PORT=8080
-REVERB_SCHEME=http
-
-VITE_REVERB_APP_KEY="${REVERB_APP_KEY}"
-VITE_REVERB_HOST="${REVERB_HOST}"
-VITE_REVERB_PORT="${REVERB_PORT}"
-VITE_REVERB_SCHEME="${REVERB_SCHEME}"
+VITE_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+VITE_PUSHER_HOST="${PUSHER_HOST}"
+VITE_PUSHER_PORT="${PUSHER_PORT}"
+VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
+VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
 
 Add this line, as we are using it on the client:
 ```bash
 VITE_APP_NAME="${APP_NAME}"
+```
+
+### Ilove API Connection
+Since we utilize some advanced services that can’t be managed with PHP alone, I’ve opted to use the iLovePDF API as an alternative. 
+Obtain your credentials from the dashboard and enter them here:
+
+```bash
+ILOVEPDF_PUBLIC_KEY=""
+ILOVEPDF_SECRET_KEY=""
 ```
 
 ## Run Commands
@@ -122,11 +129,6 @@ php artisan db:seed
 Generate a symlink to view files in storage:
 ```bash
 php artisan storage:link
-```
-
-Start the web socket server:
-```bash
-php artisan reverb:start
 ```
 
 Run the queue in development mode:
