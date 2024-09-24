@@ -103,6 +103,15 @@ Add this line, as we are using it on the client:
 VITE_APP_NAME="${APP_NAME}"
 ```
 
+### Ilove API Connection
+Since we utilize some advanced services that can’t be managed with PHP alone, I’ve opted to use the iLovePDF API as an alternative. 
+Obtain your credentials from the dashboard and enter them here:
+
+```bash
+ILOVEPDF_PUBLIC_KEY=""
+ILOVEPDF_SECRET_KEY=""
+```
+
 ## Run Commands
 Generate new app key:
 ```bash
